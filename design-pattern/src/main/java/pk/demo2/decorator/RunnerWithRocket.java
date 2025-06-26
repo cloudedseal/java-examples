@@ -1,0 +1,18 @@
+package pk.demo2.decorator;
+
+import pk.demo2.IRunner;
+
+public class RunnerWithRocket implements IRunner {
+    // 持有被装饰者
+    private IRunner runner;
+
+    public RunnerWithRocket(IRunner runner) {
+        this.runner = runner;
+    }
+
+    @Override
+    public void run() {
+        System.out.println("加快运动员速度：为运动员增加火箭装置");
+        runner.run();
+    }
+}
